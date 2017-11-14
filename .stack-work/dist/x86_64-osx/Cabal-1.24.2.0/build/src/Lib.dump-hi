@@ -1,0 +1,257 @@
+
+==================== FINAL INTERFACE ====================
+2017-10-18 22:58:30.407578 UTC
+
+interface qc-0.1.0.0-76Lrk14yc2o38huUTf5lkJ:Lib 8002
+  interface hash: 31054efc7aa0a403d5c52c85bdf4af1a
+  ABI hash: 95a98d35601e88d4137a44798b05b868
+  export-list hash: 88671b8e34ecd00d585485c997f9a8a5
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f6624f22fcdd76ed0ac6625466e2d712
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.contains
+  Lib.insert
+  Lib.qsort
+  Lib.size
+  Lib.someFunc
+  Lib.Tree{Lib.Empty Lib.Node}
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+525b287b0284e40c06763d5c3e588da2
+  $fEqTree :: GHC.Classes.Eq a => GHC.Classes.Eq (Lib.Tree a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dEq :: GHC.Classes.Eq a).
+                  @ (Lib.Tree a)
+                  (Lib.$fEqTree_$c== @ a $dEq)
+                  (Lib.$fEqTree_$c/= @ a $dEq) -}
+525b287b0284e40c06763d5c3e588da2
+  $fEqTree_$c/= ::
+    GHC.Classes.Eq a => Lib.Tree a -> Lib.Tree a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dEq :: GHC.Classes.Eq a)
+                   (a1 :: Lib.Tree a)
+                   (b :: Lib.Tree a) ->
+                 case Lib.$fEqTree_$c== @ a $dEq a1 b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+525b287b0284e40c06763d5c3e588da2
+  $fEqTree_$c== ::
+    GHC.Classes.Eq a => Lib.Tree a -> Lib.Tree a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U> -}
+525b287b0284e40c06763d5c3e588da2
+  $fFunctorTree :: GHC.Base.Functor Lib.Tree
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Lib.Tree Lib.$fFunctorTree_$cfmap Lib.$fFunctorTree_$c<$ -}
+525b287b0284e40c06763d5c3e588da2
+  $fFunctorTree_$c<$ :: a -> Lib.Tree b -> Lib.Tree a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (eta :: a) (eta1 :: Lib.Tree b) ->
+                 Lib.$fFunctorTree_$cfmap @ b @ a (\ (ds :: b) -> eta) eta1) -}
+525b287b0284e40c06763d5c3e588da2
+  $fFunctorTree_$cfmap :: (a -> b) -> Lib.Tree a -> Lib.Tree b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+525b287b0284e40c06763d5c3e588da2
+  $fShowTree :: GHC.Show.Show a => GHC.Show.Show (Lib.Tree a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Lib.Tree a)
+                  (Lib.$fShowTree_$cshowsPrec @ a $dShow)
+                  (Lib.$fShowTree_$cshow @ a $dShow)
+                  (Lib.$fShowTree_$cshowList @ a $dShow) -}
+0728599d62ade4781734ee2a3938f164
+  $fShowTree1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+525b287b0284e40c06763d5c3e588da2
+  $fShowTree_$cshow ::
+    GHC.Show.Show a => Lib.Tree a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Lib.Tree a) ->
+                 Lib.$fShowTree_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+525b287b0284e40c06763d5c3e588da2
+  $fShowTree_$cshowList ::
+    GHC.Show.Show a => [Lib.Tree a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [Lib.Tree a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Lib.Tree a)
+                   (Lib.$fShowTree_$cshowsPrec @ a $dShow Lib.$fShowTree1)
+                   eta
+                   eta1) -}
+525b287b0284e40c06763d5c3e588da2
+  $fShowTree_$cshowsPrec ::
+    GHC.Show.Show a => GHC.Types.Int -> Lib.Tree a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,1*U(U)><S,1*U> -}
+9a8c72df13992c893a6e17179784c834
+  $tc'Empty :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13423623371584258968##
+                   14297245769733316407##
+                   Lib.$trModule
+                   Lib.$tc'Empty1) -}
+c9b55322e061df700c3875dd493e0159
+  $tc'Empty1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Empty"#) -}
+9505b488e25b231e218ab77c47bbf330
+  $tc'Node :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8100857203793601893##
+                   17580724352196399523##
+                   Lib.$trModule
+                   Lib.$tc'Node1) -}
+7aa83978b7e577f9edad3e3865aa85cb
+  $tc'Node1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Node"#) -}
+c35b27441d98feb149c5f21cf73ac26f
+  $tcTree :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1069309222810846710##
+                   5178291401775835254##
+                   Lib.$trModule
+                   Lib.$tcTree1) -}
+0c780194e5d549d123be32214f19356a
+  $tcTree1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Tree"#) -}
+2705fcf88b9319f680a379b93b70ac59
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule2 Lib.$trModule1) -}
+0ec30a40eb0b4d341f8c579e054b3823
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib"#) -}
+6fb9a2ef5d7ef3384300ba491b412561
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "qc-0.1.0.0-76Lrk14yc2o38huUTf5lkJ"#) -}
+1a4055ab28c80f8c304e2d8903ca7321
+  $wcontains ::
+    GHC.Classes.Ord a => a -> Lib.Tree a -> GHC.Types.Bool
+  {- Arity: 3,
+     Strictness: <L,U(U,A,C(C1(U)),A,C(C1(U)),A,A,A)><L,U><S,1*U>,
+     Inline: [0] -}
+c09b5ab0af0f6ca99ee6cee77dadf70a
+  $winsert :: GHC.Classes.Ord a => a -> Lib.Tree a -> Lib.Tree a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U,A,C(C1(U)),A,A,A,A,A)><L,U><S,1*U>,
+     Inline: [0] -}
+eba349e0678f31359f81c7a2f5a13765
+  $wsize :: Lib.Tree a -> GHC.Prim.Int#
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+525b287b0284e40c06763d5c3e588da2
+  data Tree a = Node a (Lib.Tree a) (Lib.Tree a) | Empty
+b1f782918f84daef660dc040d542769f
+  contains ::
+    (GHC.Classes.Ord a, GHC.Classes.Eq a) =>
+    a -> Lib.Tree a -> GHC.Types.Bool
+  {- Arity: 4,
+     Strictness: <L,U(U,A,C(C1(U)),A,C(C1(U)),A,A,A)><L,A><L,U><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, True)
+                (\ @ a
+                   (w :: GHC.Classes.Ord a)
+                   (w1 :: GHC.Classes.Eq a)
+                   (w2 :: a)
+                   (w3 :: Lib.Tree a) ->
+                 Lib.$wcontains @ a w w2 w3) -}
+d3dc453c20ac5fedee031b1cd962bbfa
+  insert ::
+    (GHC.Classes.Ord a, GHC.Classes.Eq a) =>
+    a -> Lib.Tree a -> Lib.Tree a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(U,A,C(C1(U)),A,A,A,A,A)><L,A><L,U><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, True)
+                (\ @ a
+                   (w :: GHC.Classes.Ord a)
+                   (w1 :: GHC.Classes.Eq a)
+                   (w2 :: a)
+                   (w3 :: Lib.Tree a) ->
+                 Lib.$winsert @ a w w2 w3) -}
+4f6a070014eb06bce2245635ad971a9e
+  qsort :: GHC.Classes.Ord a => [a] -> [a]
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(A,A,C(C1(U)),A,A,A,A,A)><S,1*U> -}
+dd1343565bdcce6dd83b4ba282980974
+  size :: Lib.Tree a -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (w :: Lib.Tree a) ->
+                 case Lib.$wsize @ a w of ww { DEFAULT -> GHC.Types.I# ww }) -}
+390e11b370f745a0fe3cd14445dd6656
+  someFunc :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+499a820d88e771fefadadc5c727fe3e5
+  someFunc1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Lib.someFunc2
+                   GHC.Types.True
+                   eta) -}
+d2e919f89ad2096c895f6edf316dd3bf
+  someFunc2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "hello"#) -}
+instance [safe] GHC.Classes.Eq [Lib.Tree] = Lib.$fEqTree
+instance [safe] GHC.Base.Functor [Lib.Tree] = Lib.$fFunctorTree
+instance [safe] GHC.Show.Show [Lib.Tree] = Lib.$fShowTree
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

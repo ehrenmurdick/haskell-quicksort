@@ -1,0 +1,678 @@
+
+==================== FINAL INTERFACE ====================
+2017-10-18 22:58:32.769326 UTC
+
+interface main@main:TreeTest [orphan module] 8002
+  interface hash: 7b357b5f1870b104650b70f812719eca
+  ABI hash: 71a6ba7bb2dda204c74f699b412f8a74
+  export-list hash: 2cae966764f94332005380c8b885d27e
+  orphan hash: 6669c156e3fa7f632e0da8509b146df8
+  flag hash: c1db0a68a6d274c2248d79141c5d8854
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  TreeTest.prop_contains
+  TreeTest.prop_functor_law_comp
+  TreeTest.prop_functor_law_id
+  TreeTest.prop_size
+  TreeTest.prop_sorted
+  TreeTest.treeTest
+  TreeTest.treeify
+module dependencies:
+package dependencies: QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-boot-th-8.0.2@ghc-boot-th-8.0.2
+                      ghc-prim-0.5.0.0 integer-gmp-1.0.0.1 pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      qc-0.1.0.0@qc-0.1.0.0-76Lrk14yc2o38huUTf5lkJ
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      template-haskell-2.11.1.0
+                      tf-random-0.5@tf-random-0.5-CJZw1ZWS5MOJlR60HqKEZL
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck 7a1791e2e66f06ce3b95a443f0d4b1ed
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Arbitrary 7186418da62e356916f17711482dca2f
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Gen 8c21a18006b7ca28eeb63c6653bc55ab
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Test af729ecd962d539009b6dff25903d6d1
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Enum 3811281f7b5f26da514529cf3ed44009
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  qc-0.1.0.0@qc-0.1.0.0-76Lrk14yc2o38huUTf5lkJ:Lib 95a98d35601e88d4137a44798b05b868
+553873bbd09d93ecd08e3ce0e53b4679
+  $fArbitraryTree ::
+    (Test.QuickCheck.Arbitrary.Arbitrary a, GHC.Classes.Ord a) =>
+    Test.QuickCheck.Arbitrary.Arbitrary (Lib.Tree a)
+  DFunId
+  {- Arity: 2,
+     Strictness: <L,U(C(C1(U)),A)><L,U(U,A,C(C1(U)),A,A,A,A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a
+                      ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                      ($dOrd :: GHC.Classes.Ord a).
+                  @ (Lib.Tree a)
+                  (TreeTest.$fArbitraryTree_$carbitrary @ a $dArbitrary $dOrd)
+                  (TreeTest.$fArbitraryTree_$cshrink @ a $dArbitrary $dOrd) -}
+26e0689f046d719352e142d541ef2477
+  $fArbitraryTree1 ::
+    (Test.QuickCheck.Arbitrary.Arbitrary a, GHC.Classes.Ord a) =>
+    Test.QuickCheck.Random.QCGen -> GHC.Types.Int -> Lib.Tree a
+  {- Arity: 4,
+     Strictness: <L,1*U(1*C(C1(U)),A)><L,U(U,A,C(C1(U)),A,A,A,A,A)><L,1*U(U,U,U,1*U,A,A)><S(S),1*U(U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ a
+                   (w :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                   (w1 :: GHC.Classes.Ord a)
+                   (w2 :: Test.QuickCheck.Random.QCGen)
+                   (w3 :: GHC.Types.Int) ->
+                 case w3 of ww { GHC.Types.I# ww1 ->
+                 TreeTest.$w$carbitrary @ a w w1 w2 ww1 }) -}
+406d12780dbae6b0af16745793f1313b
+  $fArbitraryTree_$carbitrary ::
+    (Test.QuickCheck.Arbitrary.Arbitrary a, GHC.Classes.Ord a) =>
+    Test.QuickCheck.Gen.Gen (Lib.Tree a)
+  {- Arity: 4,
+     Strictness: <L,1*U(1*C(C1(U)),A)><L,U(U,A,C(C1(U)),A,A,A,A,A)><L,1*U(U,U,U,1*U,A,A)><S(S),1*U(U)>,
+     Unfolding: InlineRule (0, True, True)
+                TreeTest.$fArbitraryTree1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Test.QuickCheck.Arbitrary.Arbitrary a>_R
+                 ->_R <GHC.Classes.Ord a>_R
+                 ->_R Sym (Test.QuickCheck.Gen.N:Gen[0] <Lib.Tree a>_R)) -}
+4114d13b621511fcbd201d3190f94003
+  $fArbitraryTree_$cshrink ::
+    (Test.QuickCheck.Arbitrary.Arbitrary a, GHC.Classes.Ord a) =>
+    Lib.Tree a -> [Lib.Tree a]
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,A><L,A>,
+     Unfolding: InlineRule (3, True, True)
+                (\ @ a
+                   ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (ds1 :: Lib.Tree a) ->
+                 GHC.Types.[] @ (Lib.Tree a)) -}
+2d39398f61de35731f2a73e8ebd50217
+  $fArbitraryTree_$s$cshrink ::
+    Lib.Tree GHC.Types.Int -> [Lib.Tree GHC.Types.Int]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds1 :: Lib.Tree GHC.Types.Int) ->
+                 GHC.Types.[] @ (Lib.Tree GHC.Types.Int)) -}
+ffbdea4099532455aee7f9dbcc4d9fc0
+  $s$fArbitrary[]_$s$fArbitrary[]_$cshrink ::
+    [GHC.Types.Int] -> [[GHC.Types.Int]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (xs :: [GHC.Types.Int]) ->
+                 Test.QuickCheck.Arbitrary.shrinkList
+                   @ GHC.Types.Int
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt_$cshrink
+                   xs) -}
+490417d2f207f12bd6f3c030533f46c1
+  $s$fShowTree :: GHC.Show.Show (Lib.Tree GHC.Types.Int)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Lib.Tree GHC.Types.Int)
+                  (Lib.$fShowTree_$cshowsPrec @ GHC.Types.Int GHC.Show.$fShowInt)
+                  TreeTest.$s$fShowTree_$s$fShowTree_$cshow
+                  TreeTest.$s$fShowTree_$s$fShowTree_$cshowList -}
+1c2bacd1527393e46899f641ba1bdce2
+  $s$fShowTree_$s$fShowTree_$cshow ::
+    Lib.Tree GHC.Types.Int -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Lib.Tree GHC.Types.Int) ->
+                 Lib.$fShowTree_$cshowsPrec
+                   @ GHC.Types.Int
+                   GHC.Show.$fShowInt
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+753ef1173a0a3b96e1cd03e76ca88dae
+  $s$fShowTree_$s$fShowTree_$cshowList ::
+    [Lib.Tree GHC.Types.Int] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: [Lib.Tree GHC.Types.Int]) (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Lib.Tree GHC.Types.Int)
+                   (Lib.$fShowTree_$cshowsPrec
+                      @ GHC.Types.Int
+                      GHC.Show.$fShowInt
+                      Lib.$fShowTree1)
+                   eta
+                   eta1) -}
+1cfc1e0c85c11207e4aa67561dd4ce99
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   TreeTest.$trModule2
+                   TreeTest.$trModule1) -}
+929837850885803acc78ec15c3ebee66
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "TreeTest"#) -}
+5c9a47053082ca267d0e15b91f5c28f0
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+8fcc3f6cae00b3a2fda186b4ec60e808
+  $w$carbitrary ::
+    (Test.QuickCheck.Arbitrary.Arbitrary a, GHC.Classes.Ord a) =>
+    Test.QuickCheck.Random.QCGen -> GHC.Prim.Int# -> Lib.Tree a
+  {- Arity: 4,
+     Strictness: <L,1*U(1*C(C1(U)),A)><L,U(U,A,C(C1(U)),A,A,A,A,A)><L,1*U(U,U,U,1*U,A,A)><S,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                   (w1 :: GHC.Classes.Ord a)
+                   (w2 :: Test.QuickCheck.Random.QCGen)
+                   (ww :: GHC.Prim.Int#) ->
+                 letrec {
+                   go :: [a] -> Lib.Tree a {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [a]) ->
+                     case ds of wild {
+                       [] -> Lib.Empty @ a : y ys -> Lib.$winsert @ a w1 y (go ys) }
+                 } in
+                 go
+                   (Test.QuickCheck.Gen.$wlistOf
+                      @ a
+                      (Test.QuickCheck.Arbitrary.arbitrary @ a w)
+                      (case w2
+                              `cast`
+                            (Test.QuickCheck.Random.N:QCGen[0]) of ww1 { System.Random.TF.Gen.TFGen ww2 ww3 ww4 ww5 ww6 ww7 ->
+                       case System.Random.TF.Gen.$wtfGenSplit
+                              ww2
+                              ww3
+                              ww4
+                              ww5 of ww8 { (#,#) ww9 ww10 ->
+                       ww9 `cast` (Sym (Test.QuickCheck.Random.N:QCGen[0])) } })
+                      ww)) -}
+815306fee303a9c82927695146efa073
+  prop_contains :: GHC.Classes.Ord a => [a] -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <L,U(U,A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) (eta :: [a]) ->
+                 case eta of wild {
+                   [] -> GHC.Types.True
+                   : ipv ipv1
+                   -> letrec {
+                        go :: [a] -> Lib.Tree a {- Arity: 1, Strictness: <S,1*U> -}
+                        = \ (ds :: [a]) ->
+                          case ds of wild1 {
+                            [] -> Lib.Empty @ a : y ys -> Lib.$winsert @ a $dOrd y (go ys) }
+                      } in
+                      Lib.$wcontains @ a $dOrd ipv (go wild) }) -}
+5ecd330519a60d14c18a09192cc7e0c5
+  prop_contains_$sprop_contains :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (eta :: [GHC.Types.Int]) ->
+                 case eta of wild {
+                   [] -> GHC.Types.True
+                   : ipv ipv1
+                   -> Lib.$wcontains
+                        @ GHC.Types.Int
+                        GHC.Classes.$fOrdInt
+                        ipv
+                        (TreeTest.prop_contains_go wild) }) -}
+f128279022646474e8a1b5710b797171
+  prop_contains_go :: [GHC.Types.Int] -> Lib.Tree GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+b5789aa61de3fefecb58583c68bc69f2
+  prop_functor_law_comp ::
+    (GHC.Num.Num b, GHC.Base.Functor f, GHC.Classes.Eq (f b)) =>
+    f b -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A,C(C1(U)),A,A,A,C(U))><L,U(C(C1(U)),A)><S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,U>,
+     Unfolding: (\ @ b
+                   @ (f :: * -> *)
+                   ($dNum :: GHC.Num.Num b)
+                   ($dFunctor :: GHC.Base.Functor f)
+                   ($dEq :: GHC.Classes.Eq (f b))
+                   (t :: f b) ->
+                 let {
+                   ds :: b
+                   = GHC.Num.fromInteger @ b $dNum TreeTest.prop_functor_law_comp3
+                 } in
+                 let {
+                   ds1 :: b
+                   = GHC.Num.fromInteger @ b $dNum TreeTest.prop_functor_law_comp2
+                 } in
+                 GHC.Classes.==
+                   @ (f b)
+                   $dEq
+                   (GHC.Base.fmap
+                      @ f
+                      $dFunctor
+                      @ b
+                      @ b
+                      (\ (x :: b) -> GHC.Num.+ @ b $dNum (GHC.Num.* @ b $dNum x ds) ds1)
+                      t)
+                   (GHC.Base.fmap
+                      @ f
+                      $dFunctor
+                      @ b
+                      @ b
+                      (\ (ds2 :: b) -> GHC.Num.+ @ b $dNum ds2 ds1)
+                      (GHC.Base.fmap
+                         @ f
+                         $dFunctor
+                         @ b
+                         @ b
+                         (\ (ds2 :: b) -> GHC.Num.* @ b $dNum ds2 ds)
+                         t))) -}
+cc1ec2dfb4889b017d318b7bf357e977
+  prop_functor_law_comp1 :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GHC.Types.Int) ->
+                 case x of wild { GHC.Types.I# x1 ->
+                 GHC.Types.I# (GHC.Prim.+# (GHC.Prim.*# x1 2#) 1#) }) -}
+6553b1277b739f589afd06d2bac6fef4
+  prop_functor_law_comp2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+4221f5adae7b1d1142ec9fca57f416df
+  prop_functor_law_comp3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+c1f8083cf6b13700caeac419e109a641
+  prop_functor_law_comp_$sprop_functor_law_comp ::
+    Lib.Tree GHC.Types.Int -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
+     Unfolding: (\ (t :: Lib.Tree GHC.Types.Int) ->
+                 Lib.$fEqTree_$c==
+                   @ GHC.Types.Int
+                   GHC.Classes.$fEqInt
+                   (Lib.$fFunctorTree_$cfmap
+                      @ GHC.Types.Int
+                      @ GHC.Types.Int
+                      TreeTest.prop_functor_law_comp1
+                      t)
+                   (Lib.$fFunctorTree_$cfmap
+                      @ GHC.Types.Int
+                      @ GHC.Types.Int
+                      TreeTest.prop_functor_law_comp_a
+                      (Lib.$fFunctorTree_$cfmap
+                         @ GHC.Types.Int
+                         @ GHC.Types.Int
+                         TreeTest.prop_functor_law_comp_b
+                         t))) -}
+415e39d4cc380bca0e488136f18b0a3c
+  prop_functor_law_comp_a :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Types.Int) ->
+                 case ds of wild { GHC.Types.I# x ->
+                 GHC.Types.I# (GHC.Prim.+# x 1#) }) -}
+170a9125affd53917e89974e39f97582
+  prop_functor_law_comp_b :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Types.Int) ->
+                 case ds of wild { GHC.Types.I# x ->
+                 GHC.Types.I# (GHC.Prim.*# x 2#) }) -}
+6437175c09abf57500f582eda00b80ed
+  prop_functor_law_id ::
+    (GHC.Base.Functor f, GHC.Classes.Eq (f b)) => f b -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(U)),A)><S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   @ (f :: * -> *)
+                   ($dFunctor :: GHC.Base.Functor f)
+                   ($dEq :: GHC.Classes.Eq (f b))
+                   (t :: f b) ->
+                 GHC.Classes.==
+                   @ (f b)
+                   $dEq
+                   (GHC.Base.fmap @ f $dFunctor @ b @ b (GHC.Base.id @ b) t)
+                   t) -}
+45fc45d99654f4ef0ac8f826ebbf633d
+  prop_functor_law_id_$sprop_functor_law_id ::
+    Lib.Tree GHC.Types.Int -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (t :: Lib.Tree GHC.Types.Int) ->
+                 Lib.$fEqTree_$c==
+                   @ GHC.Types.Int
+                   GHC.Classes.$fEqInt
+                   (Lib.$fFunctorTree_$cfmap
+                      @ GHC.Types.Int
+                      @ GHC.Types.Int
+                      (GHC.Base.id @ GHC.Types.Int)
+                      t)
+                   t) -}
+ed67426c8bb0d20a72fb82e0c7e4df37
+  prop_size :: GHC.Classes.Ord a => [a] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(U,U),A,C(C1(U)),A,A,A,A,A)><S,U>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) (eta :: [a]) ->
+                 case GHC.List.$wlenAcc
+                        @ a
+                        (Data.OldList.nubBy
+                           @ a
+                           (GHC.Classes.== @ a (GHC.Classes.$p1Ord @ a $dOrd))
+                           eta)
+                        0# of ww2 { DEFAULT ->
+                 case Lib.$wsize
+                        @ a
+                        (TreeTest.treeify @ a $dOrd eta) of ww { DEFAULT ->
+                 GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.==# ww2 ww) } }) -}
+d62f2f0cf804be4d860aeca10c268b95
+  prop_size_$sprop_size :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
+     Unfolding: (\ (eta :: [GHC.Types.Int]) ->
+                 case GHC.List.$wlenAcc
+                        @ GHC.Types.Int
+                        (Data.OldList.nubBy @ GHC.Types.Int GHC.Classes.eqInt eta)
+                        0# of ww2 { DEFAULT ->
+                 case Lib.$wsize
+                        @ GHC.Types.Int
+                        (TreeTest.prop_size_go eta) of ww { DEFAULT ->
+                 GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.==# ww2 ww) } }) -}
+007ec9a3827f18c77044656797288952
+  prop_size_go :: [GHC.Types.Int] -> Lib.Tree GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+0686a81253cbd8db156d37532025f5a7
+  prop_sorted ::
+    (GHC.Enum.Bounded a, GHC.Classes.Ord a) =>
+    Lib.Tree a -> GHC.Types.Bool
+  {- Arity: 3,
+     Strictness: <L,U(1*U,1*U)><L,U(A,A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U> -}
+9863027cff70d6997bab139282607d07
+  prop_sorted_$sprop_sorted ::
+    Lib.Tree GHC.Types.Int -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (eta :: Lib.Tree GHC.Types.Int) ->
+                 TreeTest.prop_sorted_prop_sorted eta) -}
+e94ea12b05989198d81ea325bf76585b
+  prop_sorted_prop_sorted :: Lib.Tree GHC.Types.Int -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U> -}
+e02d66a9e1c2549bf41a969d5b011f11
+  treeTest :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                TreeTest.treeTest1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+572b443a026344a8f7ae8542b06af2b0
+  treeTest1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ (Lib.Tree GHC.Types.Int -> GHC.Types.Bool)
+                        TreeTest.treeTest4
+                          `cast`
+                        (Trans
+                             (<Lib.Tree GHC.Types.Int -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <Lib.Tree GHC.Types.Int -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TreeTest.prop_functor_law_id_$sprop_functor_law_id
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TreeTest.treeTest2
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TreeTest.prop_size_$sprop_size
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ (Lib.Tree GHC.Types.Int -> GHC.Types.Bool)
+                        TreeTest.treeTest4
+                          `cast`
+                        (Trans
+                             (<Lib.Tree GHC.Types.Int -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <Lib.Tree GHC.Types.Int -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TreeTest.prop_sorted_$sprop_sorted
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ (Lib.Tree GHC.Types.Int -> GHC.Types.Bool)
+                        TreeTest.treeTest4
+                          `cast`
+                        (Trans
+                             (<Lib.Tree GHC.Types.Int -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <Lib.Tree GHC.Types.Int -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TreeTest.prop_functor_law_comp_$sprop_functor_law_comp
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TreeTest.treeTest2
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TreeTest.prop_contains_$sprop_contains
+                        ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                 (# ipv8, GHC.Tuple.() #) } } } } }) -}
+2da36df3a438f771b1779fc347648c69
+  treeTest2 ::
+    ([GHC.Types.Int] -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3, Strictness: <L,C(U)><L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: (\ (f :: [GHC.Types.Int] -> GHC.Types.Bool)
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ [GHC.Types.Int]
+                   @ GHC.Types.Bool
+                   GHC.Show.$fShow[]_$s$fShow[]
+                   Test.QuickCheck.Property.$fTestableBool_$cproperty
+                     `cast`
+                   (Sym (Test.QuickCheck.Property.N:Testable[0] <GHC.Types.Bool>_N))
+                   TreeTest.treeTest3
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <[GHC.Types.Int]>_R))
+                   TreeTest.$s$fArbitrary[]_$s$fArbitrary[]_$cshrink
+                   f
+                   eta
+                   eta1) -}
+d44ae4f9528766bc829a55606bc9dc29
+  treeTest3 ::
+    Test.QuickCheck.Random.QCGen -> GHC.Types.Int -> [GHC.Types.Int]
+  {- Arity: 2,
+     Unfolding: (\ (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int)[OneShot] ->
+                 case eta1 of ww { GHC.Types.I# ww1 ->
+                 Test.QuickCheck.Gen.$wlistOf
+                   @ GHC.Types.Int
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt3
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <GHC.Types.Int>_R))
+                   eta
+                   ww1 }) -}
+43824754cfac34ab27a523d844e2e7bc
+  treeTest4 ::
+    (Lib.Tree GHC.Types.Int -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3, Strictness: <L,C(U)><L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: (\ (f :: Lib.Tree GHC.Types.Int -> GHC.Types.Bool)
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ (Lib.Tree GHC.Types.Int)
+                   @ GHC.Types.Bool
+                   TreeTest.$s$fShowTree
+                   Test.QuickCheck.Property.$fTestableBool_$cproperty
+                     `cast`
+                   (Sym (Test.QuickCheck.Property.N:Testable[0] <GHC.Types.Bool>_N))
+                   TreeTest.treeTest5
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <Lib.Tree GHC.Types.Int>_R))
+                   TreeTest.$fArbitraryTree_$s$cshrink
+                   f
+                   eta
+                   eta1) -}
+f126fc0a9a91e09d8cb2cb7780e31f8a
+  treeTest5 ::
+    Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int -> Lib.Tree GHC.Types.Int
+  {- Arity: 2,
+     Unfolding: (\ (w :: Test.QuickCheck.Random.QCGen)
+                   (w1 :: GHC.Types.Int) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 TreeTest.$w$carbitrary
+                   @ GHC.Types.Int
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt
+                   GHC.Classes.$fOrdInt
+                   w
+                   ww1 }) -}
+5cfea734c86ab5339ea8f8f8fe1a3ea2
+  treeify :: GHC.Classes.Ord a => [a] -> Lib.Tree a
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U,A,C(C1(U)),A,A,A,A,A)><S,1*U>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) (eta :: [a]) ->
+                 letrec {
+                   go :: [a] -> Lib.Tree a {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [a]) ->
+                     case ds of wild {
+                       [] -> Lib.Empty @ a : y ys -> Lib.$winsert @ a $dOrd y (go ys) }
+                 } in
+                 go eta) -}
+instance [safe] Test.QuickCheck.Arbitrary.Arbitrary [Lib.Tree]
+  = TreeTest.$fArbitraryTree
+"SPEC $cshrink @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                  GHC.Types.Int)
+                                      ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary
+                                                        GHC.Types.Int)
+  TreeTest.$fArbitraryTree_$cshrink @ GHC.Types.Int $dArbitrary $dOrd
+  = TreeTest.$fArbitraryTree_$s$cshrink
+"SPEC prop_contains @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                       GHC.Types.Int)
+  TreeTest.prop_contains @ GHC.Types.Int $dOrd
+  = TreeTest.prop_contains_$sprop_contains
+"SPEC prop_functor_law_comp @ Int @ Tree" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                     (Lib.Tree GHC.Types.Int))
+                                                          ($dFunctor :: GHC.Base.Functor Lib.Tree)
+                                                          ($dNum :: GHC.Num.Num GHC.Types.Int)
+  TreeTest.prop_functor_law_comp @ GHC.Types.Int
+                                 @ Lib.Tree
+                                 $dNum
+                                 $dFunctor
+                                 $dEq
+  = TreeTest.prop_functor_law_comp_$sprop_functor_law_comp
+"SPEC prop_functor_law_id @ Int @ Tree" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                   (Lib.Tree GHC.Types.Int))
+                                                        ($dFunctor :: GHC.Base.Functor Lib.Tree)
+  TreeTest.prop_functor_law_id @ GHC.Types.Int
+                               @ Lib.Tree
+                               $dFunctor
+                               $dEq
+  = TreeTest.prop_functor_law_id_$sprop_functor_law_id
+"SPEC prop_size @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                   GHC.Types.Int)
+  TreeTest.prop_size @ GHC.Types.Int $dOrd
+  = TreeTest.prop_size_$sprop_size
+"SPEC prop_sorted @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                     GHC.Types.Int)
+                                         ($dBounded :: GHC.Enum.Bounded GHC.Types.Int)
+  TreeTest.prop_sorted @ GHC.Types.Int $dBounded $dOrd
+  = TreeTest.prop_sorted_$sprop_sorted
+"SPEC/TreeTest $fArbitrary[]_$cshrink @ Int" [ALWAYS] forall ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary
+                                                                               GHC.Types.Int)
+  Test.QuickCheck.Arbitrary.$fArbitrary[]_$cshrink @ GHC.Types.Int
+                                                   $dArbitrary
+  = TreeTest.$s$fArbitrary[]_$s$fArbitrary[]_$cshrink
+"SPEC/TreeTest $fShowTree @ Int" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                              GHC.Types.Int)
+  Lib.$fShowTree @ GHC.Types.Int $dShow = TreeTest.$s$fShowTree
+"SPEC/TreeTest $fShowTree_$cshow @ Int" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                     GHC.Types.Int)
+  Lib.$fShowTree_$cshow @ GHC.Types.Int $dShow
+  = TreeTest.$s$fShowTree_$s$fShowTree_$cshow
+"SPEC/TreeTest $fShowTree_$cshowList @ Int" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                         GHC.Types.Int)
+  Lib.$fShowTree_$cshowList @ GHC.Types.Int $dShow
+  = TreeTest.$s$fShowTree_$s$fShowTree_$cshowList
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
